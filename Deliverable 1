@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VG_Deliverable_1
+{
+    class Converter
+    {
+        static void Main(string[] args)
+        {
+            double firstNum;
+            double secondNum;
+            double thirdNum;
+            string operation;
+            double avg;
+            double total;
+
+            Console.WriteLine("Hey there and welcome!");
+            Console.ReadLine();
+
+            Console.Write("Enter the first US dollar amount: ");
+            firstNum = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Now enter the second US dollar amount: ");
+            secondNum = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Ok, now enter the third US dollar amount: ");
+            thirdNum = Convert.ToDouble(Console.ReadLine());
+
+            total = firstNum + secondNum + thirdNum;
+            avg = total / 3;
+            Console.Write("The Total amount is " + total.ToString("C2", CultureInfo.CurrentCulture));
+            Console.ReadLine();
+
+            Console.Write("The Average is " + avg);
+            Console.ReadLine();
+
+            double[] array= { firstNum, secondNum, thirdNum };
+            
+            Console.Write("The Smallest amount is " + array.Min());
+            Console.ReadLine();
+
+            Console.Write("The Largest amount is " + array.Max());
+            Console.ReadLine();
+
+
+            Console.Write("The total can also be converted to: ");
+            Console.ReadLine();
+
+            Console.Write("Swedish: " + total.ToString("C2", CultureInfo.CreateSpecificCulture("sv-SE")));
+            Console.ReadLine();
+
+            Console.Write("Japanese: " + total.ToString("C", CultureInfo.CreateSpecificCulture("ja-JP")));
+            Console.ReadLine();
+
+            Console.Write("Thai: " + total.ToString("C2", CultureInfo.CreateSpecificCulture("tha-TH")));
+            Console.ReadKey();
+        }
+        
+    }
+}
